@@ -1,0 +1,265 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://sprites/player_icon.png.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Obstacle1.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Obstacle2.gd" type="Script" id=4]
+[ext_resource path="res://scripts/Star.gd" type="Script" id=5]
+[ext_resource path="res://sprites/moon.png" type="Texture" id=6]
+[ext_resource path="res://sprites/star.png" type="Texture" id=7]
+[ext_resource path="res://scripts/Obstacle3.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Obstacle4.gd" type="Script" id=9]
+[ext_resource path="res://scoreCounter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://light/light.png" type="Texture" id=11]
+[ext_resource path="res://sprites/ground.PNG" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 712, 77 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -24, -22, 24, -22, 24, 26, -24, 26 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.0588235, 0, 0.223529, 1 )
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( 1032, 112 )
+
+[node name="Moon" type="Node2D" parent="Background"]
+
+[node name="Sprite" type="Sprite" parent="Background/Moon"]
+position = Vector2( 40, 8 )
+scale = Vector2( 0.835329, 0.835329 )
+texture = ExtResource( 6 )
+
+[node name="Light2D" type="Light2D" parent="Background/Moon"]
+position = Vector2( 40, 8 )
+texture = ExtResource( 11 )
+energy = 0.66
+shadow_enabled = true
+
+[node name="Stars" type="Node2D" parent="Background"]
+position = Vector2( -1032, -112 )
+
+[node name="star1" type="Area2D" parent="Background/Stars"]
+position = Vector2( 936, 168 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star1"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star1"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star2" type="Area2D" parent="Background/Stars"]
+position = Vector2( 768, 64 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star2"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star2"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star3" type="Area2D" parent="Background/Stars"]
+position = Vector2( 368, 328 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star3"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star3"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star4" type="Area2D" parent="Background/Stars"]
+position = Vector2( 160, 112 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star4"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star4"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star5" type="Area2D" parent="Background/Stars"]
+position = Vector2( 768, 304 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star5"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star5"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star6" type="Area2D" parent="Background/Stars"]
+position = Vector2( 504, 152 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star6"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star6"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star7" type="Area2D" parent="Background/Stars"]
+position = Vector2( 1224, 328 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star7"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star7"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="star8" type="Area2D" parent="Background/Stars"]
+position = Vector2( 1144, 72 )
+script = ExtResource( 5 )
+
+[node name="Star1" type="Sprite" parent="Background/Stars/star8"]
+scale = Vector2( 1.16667, 1.16667 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Stars/star8"]
+scale = Vector2( 1e-05, 1e-05 )
+shape = SubResource( 3 )
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2( 641, 574 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2( -1, 69 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Floor"]
+position = Vector2( -1, 5.00002 )
+scale = Vector2( 80, 1.625 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Floor"]
+light_mask = 0
+position = Vector2( -0.999983, 82 )
+scale = Vector2( 20.9836, 2.46154 )
+texture = ExtResource( 12 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 440, 536 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( -8.46386e-06, 2.6226e-06 )
+scale = Vector2( 3, 3.00001 )
+texture = ExtResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+position = Vector2( 0, 20 )
+enabled = true
+cast_to = Vector2( 0, 12 )
+
+[node name="Timer" type="Timer" parent="Player"]
+autostart = true
+
+[node name="Light2D" type="Light2D" parent="Player"]
+texture = ExtResource( 11 )
+energy = 1.25
+shadow_enabled = true
+
+[node name="Obstacle1" type="Area2D" parent="."]
+position = Vector2( 1304, 542 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle1"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Obstacle1"]
+position = Vector2( -5.96046e-07, 1.19209e-06 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstacle1"]
+position = Vector2( 0, -2 )
+occluder = SubResource( 4 )
+
+[node name="Obstacle2" type="Area2D" parent="."]
+position = Vector2( 1720, 288 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Obstacle2"]
+position = Vector2( -5.96046e-07, 1.19209e-06 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstacle2"]
+position = Vector2( 0, -2 )
+occluder = SubResource( 4 )
+
+[node name="Obstacle3" type="Area2D" parent="."]
+position = Vector2( 1512, 248 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle3"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Obstacle3"]
+position = Vector2( -5.96046e-07, 1.19209e-06 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstacle3"]
+position = Vector2( 0, -2 )
+occluder = SubResource( 4 )
+
+[node name="Obstacle4" type="Area2D" parent="."]
+position = Vector2( 1504, 542 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle4"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Obstacle4"]
+position = Vector2( -5.96046e-07, 1.19209e-06 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Obstacle4"]
+position = Vector2( 0, -2 )
+occluder = SubResource( 4 )
+
+[node name="score" parent="." instance=ExtResource( 10 )]
+
+[connection signal="input_event" from="Player" to="Player" method="_on_Player_input_event"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Obstacle1" to="Player" method="_on_Obstacle1_body_entered"]
+[connection signal="body_entered" from="Obstacle2" to="Player" method="_on_Obstacle2_body_entered"]
+[connection signal="body_entered" from="Obstacle3" to="Player" method="_on_Obstacle3_body_entered"]
+[connection signal="body_entered" from="Obstacle4" to="Player" method="_on_Obstacle4_body_entered"]
+
+[editable path="score"]
